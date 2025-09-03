@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Liz Hammond - Your Trusted Real Estate Expert. Top Producer August 2025. 5 Star Client Rating. Licensed Realtor®">
+    <meta name="keywords" content="Liz Hammond, Real Estate, Realtor, Minnesota Real Estate, Obvious Realestate">
+    <meta property="og:title" content="Liz Hammond - Real Estate Expert">
+    <meta property="og:description" content="Turn your real estate dreams into reality with Liz Hammond">
+    <meta property="og:image" content="https://i.imgur.com/pkpus5O.jpeg">
+    <title>Liz Hammond - Luxury Real Estate Expert</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000000;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated gold particles background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            animation: float 15s infinite linear;
+            opacity: 0.5;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0);
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+            }
+        }
+
+        .container {
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            border-image: linear-gradient(45deg, #FFD700, #FFA500, #FFD700) 1;
+            border-radius: 30px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
+            animation: glow 3s ease-in-out infinite;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes glow {
+            0%, 100% { 
+                box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
+            }
+            50% { 
+                box-shadow: 0 30px 80px rgba(255, 215, 0, 0.5);
+            }
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: slideDown 1s ease-out;
+        }
+
+        /* Profile Image Styles - STUNNING! */
+        .profile-image-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 25px;
+            position: relative;
+            animation: zoomIn 1s ease-out;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #FFD700;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 0 60px rgba(255, 215, 0, 0.9);
+            border-color: #FFA500;
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0) rotate(-180deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #FFD700;
+            font-size: 32px;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { 
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.5);
+            }
+            50% { 
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.8);
+            }
+        }
+
+        .tagline {
+            color: #FFA500;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .credentials {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: bold;
+            animation: fadeIn 1s ease-out 0.5s backwards;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .rating-section {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: slideUp 1s ease-out 0.3s backwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .rating-stars {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .rating-text {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .links-section {
+            margin-bottom: 30px;
+        }
+
+        .link-button {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 18px;
+            margin-bottom: 15px;
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            border: 1px solid #FFD700;
+            border-radius: 15px;
+            text-decoration: none;
+            color: #FFD700;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            animation: slideInLeft 0.8s ease-out backwards;
+        }
+
+        .link-button:nth-child(1) { animation-delay: 0.1s; }
+        .link-button:nth-child(2) { animation-delay: 0.2s; }
+        .link-button:nth-child(3) { animation-delay: 0.3s; }
+        .link-button:nth-child(4) { animation-delay: 0.4s; }
+        .link-button:nth-child(5) { animation-delay: 0.5s; }
+        .link-button:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .link-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .link-button:hover::before {
+            left: 100%;
+        }
+
+        .link-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            border-color: #FFA500;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #000;
+            font-size: 22px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            animation: bounce 1s ease-out backwards;
+        }
+
+        .social-icon:nth-child(1) { animation-delay: 0.7s; }
+        .social-icon:nth-child(2) { animation-delay: 0.8s; }
+        .social-icon:nth-child(3) { animation-delay: 0.9s; }
+
+        @keyframes bounce {
+            0% { transform: translateY(-100px) scale(0); opacity: 0; }
+            60% { transform: translateY(10px) scale(1.1); }
+            100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+
+        .social-icon:hover {
+            transform: translateY(-10px) rotate(360deg) scale(1.2);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.6);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-out 1s backwards;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .cta-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-text {
+            font-size: 16px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .schedule-btn {
+            background: #000;
+            color: #FFD700;
+            padding: 15px 35px;
+            border: 2px solid #FFD700;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        .schedule-btn:hover {
+            background: #FFD700;
+            color: #000;
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+        }
+
+        .footer-text {
+            text-align: center;
+            color: #FFA500;
+            font-size: 14px;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-out 1.2s backwards;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .profile-image-container {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated particles background -->
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <!-- Profile Section with IMAGE -->
+        <div class="profile-section">
+            <!-- REPLACE THE SRC URL BELOW WITH YOUR DIRECT IMGUR LINK -->
+            <div class="profile-image-container">
+                <img src="https://i.imgur.com/XXXXXX.jpg" 
+                     alt="Liz Hammond - Real Estate Expert" 
+                     class="profile-image"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\"padding: 60px 20px; background: linear-gradient(135deg, #FFD700, #FFA500); border-radius: 50%; color: #000; font-weight: bold;\">LH</div>';">
+            </div>
+            
+            <h1>Liz Hammond</h1>
+            <p class="tagline">Real Estate Expert</p>
+            <div class="credentials">
+                <span class="badge">Licensed Realtor®</span>
+                <span class="badge">Top Producer August 2025</span>
+            </div>
+        </div>
+
+        <!-- Rating Section -->
+        <div class="rating-section">
+            <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+            <div class="rating-text">5 Star Client Rating</div>
+        </div>
+
+        <!-- Main Links -->
+        <div class="links-section">
+            <a href="https://drive.google.com/file/d/1OMHUpTiCMcrjTLXXh8bXX83d00zRI6dU/view?usp=sharing" class="link-button">
+                <span class="icon">📚</span>
+                Download Buyer's Guide
+            </a>
+            <a href="https://drive.google.com/file/d/1MtQ8lVLQEGbz90tM77DpA61ogA_79HQ_/view?usp=sharing" class="link-button">
+                <span class="icon">🏠</span>
+                Download Seller's Guide
+            </a>
+            <a href="https://calendly.com/liz-obviousrealestate/30min" class="link-button">
+                <span class="icon">📅</span>
+                Schedule Your Consultation
+            </a>
+            <a href="tel:+17636395099" class="link-button">
+                <span class="icon">📞</span>
+                Call Me: (763) 639-5099
+            </a>
+            <a href="mailto:liz@obviousrealestate.com" class="link-button">
+                <span class="icon">✉️</span>
+                Email: liz@obviousrealestate.com
+            </a>
+            <a href="https://www.obviousrealestate.com" class="link-button">
+                <span class="icon">🌟</span>
+                Visit Obvious Realestate
+            </a>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social-links">
+            <a href="https://www.facebook.com/liz.hammond.9" class="social-icon" title="Facebook">f</a>
+            <a href="https://www.instagram.com/lizhammondrealtor/" class="social-icon" title="Instagram">📷</a>
+            <a href="https://www.tiktok.com/@lizhammondrealtorr" class="social-icon" title="TikTok">♪</a>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to Make Your Move?</h2>
+            <p class="cta-text">Let's turn your real estate dreams into reality!</p>
+            <a href="https://calendly.com/liz-obviousrealestate/30min" class="schedule-btn" target="_blank">Book Your Free Consultation</a>
+        </div>
+
+        <p class="footer-text">Obvious Realestate - Where Your Dreams Come Home</p>
+    </div>
+
+    <script>
+        // Create floating particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Add smooth hover sound effect (visual feedback)
+        document.querySelectorAll('.link-button, .social-icon, .schedule-btn').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+        });
+
+        // Dynamic greeting based on time
+        const hour = new Date().getHours();
+        let greeting = "Welcome!";
+        if (hour < 12) greeting = "Good Morning! ☀️";
+        else if (hour < 18) greeting = "Good Afternoon! 🌟";
+        else greeting = "Good Evening! ✨";
+        
+        // Add dynamic welcome message
+        console.log(greeting + " Ready to find your dream home with Elizabeth Hammond!");
+
+        // Track link clicks for analytics
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('Link clicked:', this.href || this.textContent);
+            });
+        });
+
+        // Smooth scroll for any future anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
